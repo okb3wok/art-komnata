@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+{% include "./head.twig" %}
+<body class="body" >
+  {% include "./site/preloader.twig" %}
+  {% include "./site/header.twig" %}
+  <div class="content">
+    <main class="main">
+      {% block content %}
+      {% endblock %}
+    </main>
+  </div><!--/content-->
+  {% include "./site/footer.twig" %}
+{#  {% include "./site/swapper.twig" %}#}
+  {% include "./site/toTop.twig" %}
+{#  {% include "./site/modal.twig" %}#}
+<script defer src="{{ site_url }}/art.js"></script></body>
+
+</body>
+</html>

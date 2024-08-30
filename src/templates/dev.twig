@@ -1,0 +1,77 @@
+{% set pageTitle = 'Качественная мебель по индивидуальным размерам в Курске | Атлас Курск' %}
+
+{% set furnitures= {
+  'Кухни': {
+    '0': {
+      'photo': 'valensa_002.jpg',
+      'name': 'Валенса',
+      'price': '161 230 ₽'
+    },
+    '1': {
+      'photo': 'valensa_vud_003.jpg',
+      'name': 'Валенса Вуд',
+      'price': '167 090 ₽'
+    },
+    '3': {
+      'photo': 'aykon_013.jpg',
+      'name': 'Айкон',
+      'price': '133 990 ₽'
+    }
+  }
+}
+%}
+
+
+{% set manufactures= {
+  '0': {
+    'url': 'https://atlaskursk.ru/istoriya-kompanii-atlas-lyuks/',
+    'logourl': 'logo_001.jpg',
+    'name': 'Атлас Люкс'
+  },
+  '1': {
+    'url': 'https://rimi-mebel.ru',
+    'logourl': 'logo_002.jpg',
+    'name': 'Атлас Люкс'
+  },
+  '2': {
+    'url': 'https://samani.by',
+    'logourl': 'logo_003.jpg',
+    'name': 'SAMANI'
+  },
+  '3': {
+    'url': 'https://pohjanmaan.ru',
+    'logourl': 'logo_004.jpg',
+    'name': 'Pohjanmaan'
+  },
+  '4': {
+    'url': 'https://scandicstyle.ru',
+    'logourl': 'logo_005.jpg',
+    'name': 'Scandic Style'
+  },
+  '5': {
+    'url': 'https://andrea-mebel.ru',
+    'logourl': 'logo_006.jpg',
+    'name': 'Andrea'
+  }
+}
+%}
+
+{% extends "./base.twig" %}
+
+{% block content %}
+  {% include "./site/sections/service-promo.twig" %}
+  {% include "./site/sections/service-icons.twig" %}
+  {% include "./site/sections/service-why.twig" %}
+  {% include "./site/sections/service-postulates.twig" %}
+  <div id="katalog-produkcii">
+    {% for key, descriptionArray in furnitures %}
+      {% include "./site/sections/furniture.twig" with {'title': key, 'description':descriptionArray}  %}
+    {% endfor %}
+  </div>
+  {% include "./site/sections/service-manufacturers.twig" %}
+  {% include "./site/sections/service-process.twig" %}
+  {% include "./site/sections/service-order.twig" %}
+
+  {% include "./site/sections/service-contacts.twig" %}
+
+{% endblock %}

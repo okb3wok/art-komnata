@@ -1,0 +1,46 @@
+:root {
+  --main-radius: 5rem;
+  --page-padding: 30rem;
+  --font-size: 19rem;
+  --font-family: 'Century Gothic', system-ui, 'Open Sans', sans-serif;
+  --line-height: 1.55;
+  --letter-spacing: 0.2rem;
+  --max-width: 1500px;
+  --font-weight: 300;
+
+  @include devices(mobile){
+    --font-size: 17rem;
+    --page-padding: 14rem;
+  }
+}
+
+html, html[theme="default-settings"] {
+  --gray-color: rgba(168, 168, 168, 0.69);
+  --font-color: #333333;
+  --font-color-inverted:#ffffff;
+
+
+
+  --prime-color: #f04931;
+  --secondary-color: #c6260e;
+  --tertiary-color: #000000;
+
+  --title-color: var(--tertiary-color);
+
+  --meta-color: #122090;
+  --site-bg-color: #f9f9f9;
+  --site-bg-gradient: linear-gradient(165deg, rgba(179, 212, 255, 0.55) 0%, rgb(255, 255, 255) 99%);
+  --title-branding-gradient: -webkit-linear-gradient(0deg, var(--prime-color) 30%, var(--secondary-color) 90%);
+  --page-bg-color: #ffffff;
+  --link-color: var(--prime-color);
+  --link-decoration: inherit;
+  --link-color-hover: var(--secondary-color);
+  --blur-color: rgba(0, 0, 0, 0.25);
+  --img-filter: grayscale(0);
+  --footer-bg: #eff5f9;
+  --footer-text-color: #5d5d5d;
+
+  --button-border-color: transparent;
+  --button-font-color: var(--font-color-inverted);
+}
+

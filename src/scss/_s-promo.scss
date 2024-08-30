@@ -1,0 +1,50 @@
+.s-promo{
+
+  height: calc(100vh - 60rem);
+  background: linear-gradient(0deg, rgba(2, 2, 2, 0.5) 5%, rgba(2, 2, 2, 0.3) 55%), url("../static/promo-bg.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &>.wrapper{
+   max-width: 960px;
+    padding: 0 var(--page-padding);
+  }
+
+  &__center{
+    flex: 0 0 auto;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    @include devices(mobile) {
+
+      flex-direction: column;
+    }
+  }
+
+  &__title{
+    color: inherit;
+  }
+
+  &__logo{
+    flex: 0 0 auto;
+  }
+
+  &__text{
+    flex: 1 1 auto;
+    margin-left: 20rem;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(2, 2, 2, 0.3) 80%);
+    padding: 20rem;
+
+    @include devices(mobile) {
+      margin: 0;
+      padding: 10rem;
+    }
+  }
+
+
+
+}

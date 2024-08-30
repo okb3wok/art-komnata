@@ -1,0 +1,230 @@
+.header{
+
+  flex: 0 1 auto;
+  width:100%;
+  background: rgba(19, 19, 19, 0.73);
+  backdrop-filter: blur(3px);
+  color: #ffffff;
+  text-transform: uppercase;
+  position: fixed;
+  z-index: 1;
+
+
+
+  @include devices(mobile){
+
+  }
+
+  & .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+
+  .header-branding{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-right: 20rem;
+    @include devices(mobile){
+      margin-right: 4rem;
+    }
+
+    &>svg{
+      flex: 0 0 auto;
+      width: 72px;
+      transition: width .4s ease-in-out;
+      @include devices(tablet){
+        width: unset;
+      }
+    }
+
+    &__title{
+      flex: 0 1 auto;
+      font-size: calc(var(--font-size) * 1.3);
+      padding-left: 20rem;
+      letter-spacing: 4rem;
+      line-height: 1;
+
+      @include devices(tablet){
+        font-size: calc(var(--font-size) * 1);
+      }
+
+      @include devices(mobile){
+        padding-left: 10rem;
+        font-size: calc(var(--font-size) * 0.8);
+      }
+    }
+  }
+
+
+  .mobile-wrap{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @include devices(mobile){
+      display: none;
+    }
+  }
+
+
+  .header-nav{
+    flex: 1 1 auto;
+    margin-right: 20rem;
+    @include devices(tablet){
+      position: absolute;
+      top: 60rem;
+      left: 0;
+      right: 0;
+      margin: 0;
+      display: flex;
+      background: rgba(19, 19, 19, 0.73);
+      padding: 0 20rem 8rem 20rem;
+    }
+
+    @include devices(mobile){
+      pointer-events: none;
+      position: absolute;
+      top: 115rem;
+      left: 0;
+      right: 0;
+
+      margin: 0;
+    }
+  }
+  .main-menu-container{
+    width: 100%;
+  }
+
+  .main-menu{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-bottom: 0;
+    font-size: calc(var(--font-size) * 0.9);
+
+
+  }
+
+  .header-phone-address{
+    flex: 0 0 30%;
+    font-size: calc(var(--font-size) * 0.8);
+    margin-right: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include devices(tablet){
+      font-size: calc(var(--font-size) * 0.7);;
+      margin-right: 12rem;
+    }
+
+    @include devices(mobile){
+      font-size: calc(var(--font-size) * 1);
+      position: absolute;
+      top: 60rem;
+      left: 0;
+      right: 0;
+
+      margin: 0;
+      background: #131313;
+    }
+  }
+
+  .header-social-vkontakte{
+    margin-right: 20rem;
+    @include devices(tablet){
+      margin-right: 0;
+    }
+  }
+
+  .header-social-whatsapp{
+    margin-right: 20rem;
+    @include devices(tablet){
+      margin-right: 0;
+    }
+  }
+
+
+  .menu-toggle{
+    align-self: center;
+    position: absolute;
+    right: var(--page-padding);
+    top:0;
+    bottom:0;
+    z-index: 0;
+    display: none;
+    align-items: center;
+
+    @include devices(mobile){
+      display: flex;
+    }
+
+    &>button{
+      width: 40px;
+      height: 28px;
+      transform: rotate(0deg);
+      cursor: pointer;
+
+      & span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: var(--font-color-inverted);
+        border-radius: 2px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .15s ease-in-out;
+      }
+
+
+      & span:nth-child(1) {
+        top: 0;
+        transform-origin: left center;
+      }
+
+      & span:nth-child(2) {
+        top: 12px;
+        transform-origin: left center;
+      }
+
+      & span:nth-child(3) {
+        top: 24px;
+        transform-origin: left center;
+      }
+
+
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg);
+        top: -2px;
+        left: 6px;
+      }
+
+      &.open span:nth-child(2) {
+        width: 0;
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 26px;
+        left: 6px;
+      }
+
+    }
+  }
+}
