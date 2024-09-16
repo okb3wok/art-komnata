@@ -13,9 +13,24 @@ const preloader = {
 
     let a = document.querySelectorAll('a');
     a.forEach((el) => {
+
       el.addEventListener('click', (event) => {
-        this.preloaderShow();
-        event.preventDefault();
+
+        if(event.target.hash){
+          event.preventDefault();
+          let link = document.querySelector(event.target.hash);
+          if(link){
+
+            let mobileMenu = document.querySelector('.mobile-wrap');
+            if(mobileMenu.classList.contains('open')){
+              mobileMenu.classList.toggle('open');
+            }
+            window.scrollTo({ top: link.offsetTop-60, behavior: 'smooth' });
+          }
+
+        }
+
+
       })
     })
 

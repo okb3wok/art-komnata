@@ -11,29 +11,22 @@
   overflow: hidden;
 
 
-  //&::after{
-  //    content: '';
-  //    visibility: visible;
-  //    width: 100vw;
-  //    height: 150vh;
-  //    position: absolute;
-  //    right: 0;
-  //    top: 0;
-  //    border-radius: 50%;
-  //
-  //    background: radial-gradient(50% 50% at 50% 50%, #b005f3 0,var(--footer-bg) 100%),var(--footer-bg);
-  //    opacity: .05;
-  //    margin-right: -30%;
-  //    margin-top: -30%;
-  //
-  //}
+  & a {
+    color: rgba(255, 255, 255, 0.68);
+    text-decoration: none;
+  }
 
+  & h5{
+    color: rgba(255, 255, 255, 0.68);
+    text-transform: uppercase;
+    margin-bottom: 20rem;
+  }
   @include devices(tablet){
     margin-top: 0;
   }
 
   &>.wrapper{
-    padding: var(--page-padding);
+    padding: 80px 40px 40px 40px;
     display: flex;
     flex-direction: row;
     position: relative;

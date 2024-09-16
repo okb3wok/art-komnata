@@ -1,13 +1,14 @@
 .s-promo{
 
-  height: calc(100vh - 60rem);
+  height: calc(100vh );
   background: linear-gradient(0deg, rgba(2, 2, 2, 0.5) 5%, rgba(2, 2, 2, 0.3) 55%), url("../static/promo-bg.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  position: relative;
+  z-index: 0;
   &>.wrapper{
    max-width: 960px;
     padding: 0 var(--page-padding);
@@ -17,11 +18,10 @@
     flex: 0 0 auto;
     color: #ffffff;
     display: flex;
-    justify-content: space-between;
-    @include devices(mobile) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-      flex-direction: column;
-    }
   }
 
   &__title{
@@ -36,9 +36,19 @@
     flex: 1 1 auto;
     margin-left: 20rem;
     height: 100%;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(2, 2, 2, 0.3) 80%);
+    //background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(2, 2, 2, 0.3) 80%);
     padding: 20rem;
+    letter-spacing: 24px;
+    font-weight: 400;
+    font-size: 48px;
+    text-transform: uppercase;
 
+    & h1{
+
+      font-size: 48px;
+      font-weight: 400;
+      font-family: "Roboto Condensed", sans-serif;
+    }
     @include devices(mobile) {
       margin: 0;
       padding: 10rem;

@@ -1,0 +1,54 @@
+.s-kontakty{
+
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+  background-color: #fff;
+  color: #666;
+
+  &> .wrapper{
+    padding: 120px 40px 140px 40px;
+  }
+
+  &__header > h2{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    font-weight: 400;
+    font-size: 30px;
+  }
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row;
+  }
+
+  &__map{
+    flex: 0 0 64%;
+
+  }
+
+  &__desc{
+    flex: 0 0 34%;
+    display: flex;
+    align-items: start;
+
+    &>svg{
+      margin-right: 16rem;
+    }
+
+    &>div{
+      font-size: 14px;
+
+      & h4{
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 400;
+        margin-bottom: 20rem;
+      }
+    }
+  }
+}

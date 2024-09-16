@@ -2,17 +2,17 @@
 
   flex: 0 1 auto;
   width:100%;
-  background: rgba(19, 19, 19, 0.73);
+  background: rgb(0, 0, 0);
   backdrop-filter: blur(3px);
   color: #ffffff;
   text-transform: uppercase;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 
 
 
   @include devices(mobile){
-
+    background: rgb(0, 0, 0);
   }
 
   & .wrapper{
@@ -60,10 +60,12 @@
 
       @include devices(mobile){
         padding-left: 10rem;
-        font-size: calc(var(--font-size) * 0.8);
+        font-size: calc(var(--font-size) * 1.3);
       }
     }
   }
+
+
 
 
   .mobile-wrap{
@@ -72,8 +74,27 @@
     align-items: center;
     justify-content: space-around;
 
+
+    &.open{
+      pointer-events:inherit;
+      display: flex;
+      position: absolute;
+      top: 60px;
+      flex-wrap: wrap;
+      background: rgb(0, 0, 0);
+      opacity: 1;
+      transition: opacity .2s ease-in-out;
+      padding: 0 0 30rem 0;
+    }
+
     @include devices(mobile){
-      display: none;
+      display: flex;
+      position: absolute;
+      pointer-events: none;
+      top: 60px;
+      opacity: 0;
+
+      background: rgb(0, 0, 0);
     }
   }
 
@@ -81,6 +102,7 @@
   .header-nav{
     flex: 1 1 auto;
     margin-right: 20rem;
+
     @include devices(tablet){
       position: absolute;
       top: 60rem;
@@ -88,20 +110,23 @@
       right: 0;
       margin: 0;
       display: flex;
-      background: rgba(19, 19, 19, 0.73);
+      background: rgb(0, 0, 0);
       padding: 0 20rem 8rem 20rem;
     }
 
-    @include devices(mobile){
-      pointer-events: none;
-      position: absolute;
-      top: 115rem;
-      left: 0;
-      right: 0;
 
+    @include devices(mobile){
+      //pointer-events: none;
+      position: unset;
+      flex: 1 1 100%;
+      //top: 115rem;
+      //left: 0;
+      //right: 0;
       margin: 0;
+      background: unset;
     }
   }
+
   .main-menu-container{
     width: 100%;
   }
@@ -115,7 +140,15 @@
     margin-bottom: 0;
     font-size: calc(var(--font-size) * 0.9);
 
+  }
 
+  .menu-item{
+    @include devices(mobile){
+      flex: 1 0 100%;
+
+      text-align: center;
+      margin: 20rem 0 ;
+    }
   }
 
   .header-phone-address{
@@ -124,7 +157,7 @@
     margin-right: 40rem;
     display: flex;
     flex-wrap: wrap;
-
+    justify-content: center;
     @include devices(tablet){
       font-size: calc(var(--font-size) * 0.7);;
       margin-right: 12rem;
@@ -132,13 +165,17 @@
 
     @include devices(mobile){
       font-size: calc(var(--font-size) * 1);
-      position: absolute;
-      top: 60rem;
-      left: 0;
-      right: 0;
+      flex: 1 1 100%;
+      margin: 10rem 0 30rem 0;
 
-      margin: 0;
-      background: #131313;
+
+      //position: relative;
+      //top: 60rem;
+      //left: 0;
+      //right: 0;
+      //
+      //margin: 0;
+      //background: #131313;
     }
   }
 
@@ -166,6 +203,7 @@
     z-index: 0;
     display: none;
     align-items: center;
+
 
     @include devices(mobile){
       display: flex;

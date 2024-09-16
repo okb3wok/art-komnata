@@ -12,9 +12,15 @@ const header = {
       return;
     }
 
+    let mobileWrap = document.querySelector('.mobile-wrap');
+
     this.menuToggle.addEventListener('click', () => {
       this.menuToggle.classList.toggle('open');
+      mobileWrap.classList.toggle('open');
     })
+
+    //this.headerNav.querySelector('')
+
   },
 
 
