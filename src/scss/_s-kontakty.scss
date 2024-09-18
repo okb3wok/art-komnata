@@ -4,18 +4,20 @@
   position: relative;
   background-color: #fff;
   color: #666;
+  font-weight: 400;
 
   &> .wrapper{
-    padding: 120px 40px 140px 40px;
+    padding: 100px var(--page-padding) 100px var(--page-padding);
   }
 
   &__header > h2{
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
-
     font-weight: 400;
     font-size: 30px;
+
+
   }
 
   &__content{
@@ -23,10 +25,16 @@
     justify-content: space-between;
     align-items: start;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   &__map{
     flex: 0 0 64%;
+    margin-bottom: 20rem;
+
+    @include devices(mobile){
+      flex: 0 1 100%;
+    }
 
   }
 
@@ -35,12 +43,24 @@
     display: flex;
     align-items: start;
 
+
+    @include devices(mobile){
+      flex: 0 1 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
     &>svg{
       margin-right: 16rem;
+      margin-bottom: 20rem;
     }
 
     &>div{
-      font-size: 14px;
+      font-size: 18px;
+
+      @include devices(mobile){
+        text-align: center;
+      }
 
       & h4{
         font-size: 18px;

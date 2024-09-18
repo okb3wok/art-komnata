@@ -7,6 +7,7 @@
   color: #ffffff;
   text-transform: uppercase;
   position: fixed;
+  top: 0;
   z-index: 2;
 
 
@@ -153,11 +154,14 @@
 
   .header-phone-address{
     flex: 0 0 30%;
-    font-size: calc(var(--font-size) * 0.8);
+    font-size: calc(var(--font-size) * 0.9);
     margin-right: 40rem;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+
+
     @include devices(tablet){
       font-size: calc(var(--font-size) * 0.7);;
       margin-right: 12rem;
@@ -167,7 +171,7 @@
       font-size: calc(var(--font-size) * 1);
       flex: 1 1 100%;
       margin: 10rem 0 30rem 0;
-
+      align-items: center;
 
       //position: relative;
       //top: 60rem;

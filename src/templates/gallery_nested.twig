@@ -1,0 +1,23 @@
+{% extends "./base.twig" %}
+
+{% block content %}
+    <div class="gallery">
+        <div class="wrapper">
+            <h1>{{ title }}</h1>
+
+            <div class="gallery__meta">
+                <a href="{{ site_url }}">Назад на главную</a>
+            </div>
+
+            <div class="gallery__list">
+                {% for item in gallery %}
+                    <div class="gallery__item">
+                        <a href="{{ site_url }}{{ item.link }}">
+                            <img src="/photos/{{ item.thumb }}" alt="{{ item.name }}" />
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

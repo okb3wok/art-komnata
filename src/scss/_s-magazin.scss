@@ -15,6 +15,10 @@
 
   &> .wrapper{
     padding: 120px 40px 140px 40px;
+
+    @include devices(mobile){
+      padding: 40px var(--page-padding) 40px var(--page-padding);
+    }
   }
 
   &__subheader{
@@ -34,6 +38,13 @@
     letter-spacing: 24px;
     font-weight: 400;
     font-size: 48px;
+
+    @include devices(mobile) {
+      letter-spacing: 4rem;
+      font-size: 32rem;
+      margin-top: 20rem;
+    }
+
   }
 
   &__list{
@@ -53,6 +64,10 @@
 
     @include devices(tablet){
       flex: 0 1 48%;
+    }
+
+    @include devices(mobile){
+      flex: 1 1 100%;
     }
 
     &>a{
@@ -89,7 +104,7 @@
     display: block;
     height: 1px;
     width: 100%;
-    margin: 20px 0 15px;
+    margin: 8px 0 20px;
   }
 
   &__item-border:before {

@@ -10,7 +10,7 @@ html{
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   min-height: 100vh;
-  background: var(--site-bg-gradient);
+  background: var(--site-bg-color);
   line-height: var(--line-height);
   min-width: 280px;
   -webkit-text-size-adjust:100%;
@@ -118,17 +118,17 @@ a {
 }
 
 
-
-
-%whatsapp {
-  background: #25d366;
-  border-radius: 50%;
-  width: 43rem;
-  height: 43rem;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+.art-button-bright{
+  margin-bottom: 20rem;
+  font-size: 18px;
+  @include button (#fff, #111, transparent, #fff, 2px, rgba(255, 255, 255, 0.75));
 }
+
+.art-button-dark{
+  font-size: 15px;
+  @include button (#fff, #fff, rgba(17, 17, 17, 0.93), #000, 2px, rgba(255, 255, 255, 0.75));
+}
+
 
 
 

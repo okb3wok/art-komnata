@@ -16,20 +16,27 @@
 
 
 
-@mixin button ($color, $bg, $bghover, $radius, $bordercolor) {
-  padding: 4rem 8rem;
-  display: inline-block;
+@mixin button ($color,$colorhover, $bg, $bghover, $radius, $bordercolor) {
 
+  line-height: 1.3;
+  text-transform: uppercase;
+  padding: 8rem 32rem;
+  display: inline-block;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-family: "Roboto Condensed", sans-serif;
   color: $color;
   background: $bg;
   border-radius: $radius;
-  border: 2px solid $bordercolor;
+  border: 1px solid $bordercolor;
   cursor: pointer;
   transition: background-color .3s ease;
-  text-decoration: var(--link-decoration);
+  text-decoration: none;
+  opacity: .8;
 
   &:hover {
     background: $bghover;
+    color: $colorhover;
   }
 
   &:disabled {

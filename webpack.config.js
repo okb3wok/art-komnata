@@ -50,6 +50,14 @@ const config = {
         },
       ],
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/templates'),
+          to: path.resolve(__dirname, 'dist/templates')
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -58,7 +66,13 @@ const config = {
         use: [
           { loader: 'twig-loader' }
         ]
-
+      },
+      {
+        test: /\.(ttf|woff2)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/fonts/[name][ext]'
+        }
       },
       {
         test: /\.s[ac]ss|css$/i,
