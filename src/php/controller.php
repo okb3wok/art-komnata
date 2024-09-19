@@ -18,8 +18,15 @@ class Controller{
         $this->render('art.twig', ['pageTitle' => 'АртКомната']);
     }
 
-    public function gallery_simple($name, $title='', $pageTitle='', $pageDescription='')
+    public function gallery_simple($name)
     {
+        // get data from model
+        $jsonData = file_get_contents('./model-gallery-simple.json');
+        $dataArray = json_decode($jsonData, true);
+        $title = $dataArray[$name]['title'];
+        $pageDescription = $dataArray[$name]['desc'];
+        $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
+
 
         $files = glob('/var/www/html/photos/'.$name.'/*.jpg');
         $gallery = [];
@@ -27,15 +34,6 @@ class Controller{
             $gallery[] = [ 'photo' => $name.'/'.basename($file), 'thumb' => $name.'/thumbs/'.basename($file), 'name' => 'name' ];
         }
 
-        if($name=="wallpapers" ){
-            $title = 'Интерьерные обои';
-            $pageTitle = 'Интерьерные обои - АртКомната';
-            $pageDescription = 'Некоторые интерьерные представленные в нашем магазине в Курске';
-        }elseif ($name=="frescoes" ){
-            $title = 'Интерьерные фрески';
-            $pageTitle = 'Интерьерные фрески - АртКомната';
-            $pageDescription = 'Интерьерные фрески';
-        }
         $this->render('gallery_simple.twig', ['gallery' => $gallery, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
     }
 

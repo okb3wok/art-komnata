@@ -15,7 +15,7 @@
                         $subdirs = glob($dir . '/*', GLOB_ONLYDIR);
                         foreach ($subdirs as $subdir) {
                             if(basename($subdir) != 'thumbs'){
-                                echo ' - '. basename($subdir) . "<br>";
+                                echo ' - '. basename($dir) . "/" .basename($subdir) . "<br>";
                             }
                         }
                     }
