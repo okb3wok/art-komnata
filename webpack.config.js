@@ -58,6 +58,22 @@ const config = {
         },
       ],
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/php'),
+          to: path.resolve(__dirname, 'dist')
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/adminka'),
+          to: path.resolve(__dirname, 'dist/adminka')
+        },
+      ],
+    })
   ],
   module: {
     rules: [
