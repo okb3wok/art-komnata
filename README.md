@@ -1,6 +1,6 @@
 # 🧐 About
 
-The website for Design Studio ARTKOMHATA. Project workflow is based on [webpack](https://webpack.js.org/).
+The website for Design Studio ARTKOMHATA. Written on PHP the site is built on the MVC pattern. Project workflow is based on [webpack](https://webpack.js.org/).
 Admin panel is based on [AdminLTE v4.0](https://adminlte.io/AdminLTE)  
 
 ## Getting started
