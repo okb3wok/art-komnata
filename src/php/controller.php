@@ -25,7 +25,6 @@ class Controller{
         $jsonData = file_get_contents('./model-gallery-simple.json');
         $dataArray = json_decode($jsonData, true);
 
-         echo  $name;
         if($dataArray[$name]){
           $title = $dataArray[$name]['title'];
           $pageDescription = $dataArray[$name]['desc'];
