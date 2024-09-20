@@ -1,6 +1,10 @@
 .gallery{
   margin-top: 95px;
 
+  &> .wrapper{
+    padding: 30px var(--page-padding) 100px var(--page-padding);
+  }
+
   &__list{
     column-count: 3;
     column-gap: 20rem;

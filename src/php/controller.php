@@ -20,22 +20,31 @@ class Controller{
 
     public function gallery_simple($name)
     {
+
         // get data from model
         $jsonData = file_get_contents('./model-gallery-simple.json');
         $dataArray = json_decode($jsonData, true);
-        $title = $dataArray[$name]['title'];
-        $pageDescription = $dataArray[$name]['desc'];
-        $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
+
+         echo  $name;
+        if($dataArray[$name]){
+          $title = $dataArray[$name]['title'];
+          $pageDescription = $dataArray[$name]['desc'];
+          $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
 
 
-        $files = glob('/var/www/html/photos/'.$name.'/*.jpg');
-        $gallery = [];
-        foreach ($files as $file) {
+          $files = glob('/var/www/html/photos/'.$name.'/*.jpg');
+          $gallery = [];
+          foreach ($files as $file) {
             $gallery[] = [ 'photo' => $name.'/'.basename($file), 'thumb' => $name.'/thumbs/'.basename($file), 'name' => 'name' ];
+          }
+
+          $this->render('gallery_simple.twig', ['gallery' => $gallery, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
+
+        }else{
+          $this->not_found($name);
         }
 
-        $this->render('gallery_simple.twig', ['gallery' => $gallery, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
-    }
+}
 
 
     public function gallery_tagged($name){
@@ -87,7 +96,24 @@ class Controller{
 
     public function gallery_nested($name){
 
-        $this->render('gallery_nested.twig', ['name' => $name]);
+      $jsonData = file_get_contents('./model-gallery-nested.json');
+      $dataArray = json_decode($jsonData, true);
+
+      $title = $dataArray[$name]['title'];
+      $pageDescription = $dataArray[$name]['desc'];
+      $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
+      $content = $dataArray[$name]['content'];
+      $this->render('gallery_nested.twig', ['content'=>$content, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
+
+    }
+
+    public function not_found ($url)
+    {
+      $title = 'Страница не найдена';
+      $pageDescription = 'Страница не найдена';
+      $pageTitle = 'Страница не найдена - АртКомната';
+      header("HTTP/1.0 404 Not Found");
+      $this->render('404.twig', ['content'=>$url, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
     }
 
 

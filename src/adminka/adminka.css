@@ -1,0 +1,23 @@
+.gallery__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.gallery__item{
+    flex: 0 1 10%;
+    position: relative;
+
+    margin: 0 10px 10px 0;
+
+    &> img{
+        width: 100%;
+    }
+    &> .number{
+        position: absolute;
+        background: rgba(255, 255, 255, 0.75);
+        padding: 4px;
+    }
+}
+
+

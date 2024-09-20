@@ -10,9 +10,9 @@
         if(isset($_GET['gallery']) && isset($_GET['update'])){
           $jsonData = file_get_contents('../model-gallery-simple.json');
           $dataArray = json_decode($jsonData, true);
-          $dataArray[$_GET['gallery']]['title'] = trim($_POST['title']);
-          $dataArray[$_GET['gallery']]['desc'] = trim($_POST['desc']);
-          $dataArray[$_GET['gallery']]['thumb'] = trim($_POST['thumb']);
+          $dataArray[$_GET['gallery']]['title'] = htmlspecialchars(trim($_POST['title']));
+          $dataArray[$_GET['gallery']]['desc'] = htmlspecialchars(trim($_POST['desc']));
+          $dataArray[$_GET['gallery']]['thumb'] = htmlspecialchars(trim($_POST['thumb']));
           $jsonData = json_encode($dataArray, JSON_UNESCAPED_UNICODE);
           file_put_contents('../model-gallery-simple.json', $jsonData);
           echo '<p style="color:green">Галерея обновлена</p>';

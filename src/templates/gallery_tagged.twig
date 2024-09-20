@@ -1,32 +1,32 @@
 {% extends "./base.twig" %}
 
 {% block content %}
-    <div class="gallery">
-        <div class="wrapper">
+<div class="gallery">
+    <div class="wrapper">
 
-            <ul class="gallery__tags">
-                <li><a href="#all">Все</a></li>
-                {% for item in tags%}
-                    <li><a href="#{{ item.eng }}">{{ item.ru }}</a></li>
-                {% endfor %}
-            </ul>
+        <ul class="gallery__tags">
+            <li><a href="#all">Все</a></li>
+            {% for item in tags%}
+                <li><a href="#{{ item.eng }}">{{ item.ru }}</a></li>
+            {% endfor %}
+        </ul>
 
-            <h1>{{ title }}</h1>
+        <h1>{{ title }}</h1>
 
-            <div class="gallery__meta">
-                <a href="{{ site_url }}">Назад на главную</a>
-            </div>
+        <div class="gallery__meta">
+            <a href="{{ site_url }}">Назад на главную</a>
+        </div>
 
 
-            <div class="gallery__list">
-                {% for item in gallery %}
-                    <div class="gallery__item {{ item.tag }}">
-                        <a href="/photos/{{ item.photo }}">
-                            <img src="/photos/{{ item.thumb }}" alt="{{ item.name }}" />
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
+        <div class="gallery__list">
+            {% for item in gallery %}
+                <div class="gallery__item {{ item.tag }}">
+                    <a href="/photos/{{ item.photo }}">
+                        <img src="/photos/{{ item.thumb }}" alt="{{ item.name }}" />
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 {% endblock %}

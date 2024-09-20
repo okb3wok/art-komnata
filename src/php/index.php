@@ -14,7 +14,7 @@ include 'controller.php';
 
 
 $routes = [
-    'o-nas',
+//    'o-nas',
     'gallery',
     'public-spaces-gallery',
     'cornices-and-moldings',
@@ -34,16 +34,20 @@ if($url=="") {  // in case Home Page
 
     if(in_array($matches[1], $routes)){
 
-        if($matches[1]=="wallpapers" || $matches[1]== "frescoes"){
-            $controller->gallery_simple($matches[1]);
-        }elseif ($matches[1]=="cornices-and-moldings" || $matches[1]== "interior-paints-and-decorative-plasters"){
+        if($matches[1] == "wallpapers" || $matches[1] == "frescoes"  ){
+            $controller->gallery_simple($matches[0]);
+        }elseif ($matches[1] == "cornices-and-moldings" || $matches[1] == "interior-paints-and-decorative-plasters"){
             $controller->gallery_tagged($matches[1]);
-        }elseif ($matches[1]=="public-spaces-gallery" && $matches[2]){
-            $controller->gallery_simple($matches[1].'/'.$matches[2]);
+        }elseif ($matches[1] == "gallery" || $matches[1] == "public-spaces-gallery"){
+            if($matches[2]){
+              $controller->gallery_simple($matches[0]);
+            }else{
+              $controller->gallery_nested($matches[0]);
+            }
         }
 
     }else{
-        echo '404';
+        $controller->not_found($url);
     }
 
 }
