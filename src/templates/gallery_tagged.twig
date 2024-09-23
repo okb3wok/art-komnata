@@ -22,7 +22,7 @@
             {% for item in gallery %}
                 <div class="gallery__item {{ item.tag }}">
                     <a href="/photos/{{ item.photo }}">
-                        <img src="/photos/{{ item.thumb }}" alt="{{ item.name }}" />
+                        <img loading="lazy" src="/photos/{{ item.thumb }}" alt="{{ item.name }}"/>
                     </a>
                 </div>
             {% endfor %}

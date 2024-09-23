@@ -13,8 +13,11 @@
             {% for key, item in content %}
                 <div class="gallery__item">
                     <a href="{{ site_url }}{{ key }}/">
-                        <img src="/photos/{{ key }}/thumbs/{{ item.thumb }}" alt="{{ item.title }}" />
-                        <span>Альбом "{{ item.title }}"</span>
+                        <div class="gallery__item-img">
+                            <img loading="lazy" src="/photos/{{ key }}/thumbs/{{ item.thumb }}" alt="{{ item.title }}" />
+                        </div>
+                        <div class="gallery__item-caption">{{ item.title }}</div>
+                        <h2>Альбом "{{ item.title }}"</h2>
                     </a>
                 </div>
             {% endfor %}

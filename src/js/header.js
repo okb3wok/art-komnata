@@ -36,7 +36,7 @@ const header = {
             }
             //window.location = event.target.origin;
 
-            window.scrollTo({ top: link.offsetTop-60, behavior: 'smooth' });
+            window.scrollTo({ top: link.offsetTop-59, behavior: 'smooth' });
           }
 
         }

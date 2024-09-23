@@ -2,7 +2,7 @@
 
   flex: 0 1 auto;
   width:100%;
-  background: rgb(0, 0, 0);
+  background: #222222;
   backdrop-filter: blur(3px);
   color: #ffffff;
   text-transform: uppercase;
@@ -13,7 +13,7 @@
 
 
   @include devices(mobile){
-    background: rgb(0, 0, 0);
+    background: #222222;
   }
 
   & .wrapper{
@@ -82,9 +82,9 @@
       position: absolute;
       top: 60px;
       flex-wrap: wrap;
-      background: rgb(0, 0, 0);
+      background: #222222;
       opacity: 1;
-      transition: opacity .2s ease-in-out;
+      transition: opacity .15s ease-in-out;
       padding: 0 0 30rem 0;
     }
 
@@ -95,7 +95,7 @@
       top: 60px;
       opacity: 0;
 
-      background: rgb(0, 0, 0);
+      background: #222222;
     }
   }
 
@@ -111,7 +111,7 @@
       right: 0;
       margin: 0;
       display: flex;
-      background: rgb(0, 0, 0);
+      background: #222222;
       padding: 0 20rem 8rem 20rem;
     }
 

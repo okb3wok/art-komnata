@@ -34,7 +34,7 @@ class Controller{
           $files = glob('/var/www/html/photos/'.$name.'/*.jpg');
           $gallery = [];
           foreach ($files as $file) {
-            $gallery[] = [ 'photo' => $name.'/'.basename($file), 'thumb' => $name.'/thumbs/'.basename($file), 'name' => 'name' ];
+            $gallery[] = [ 'photo' => $name.'/'.basename($file), 'thumb' => $name.'/thumbs/'.basename($file), 'name' => $title ];
           }
 
           $this->render('gallery_simple.twig', ['gallery' => $gallery, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
