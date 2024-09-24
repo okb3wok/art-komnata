@@ -1,11 +1,11 @@
 <?php
 
-require '/var/www/html/vendor/autoload.php';
+require '/var/www/art-komnata.ru/vendor/autoload.php';
 
 class Controller{
 
-    private $templates_path = '/var/www/html/templates/';
-    private $compilation_cache_path = '/var/www/html/compilation_cache/';
+    private $templates_path = '/var/www/art-komnata.ru/templates/';
+    private $compilation_cache_path = '/var/www/art-komnata.ru/compilation_cache/';
 
     private function render($template, $data = []){
         $twig_loader = new \Twig\Loader\FilesystemLoader($this->templates_path);
@@ -31,7 +31,7 @@ class Controller{
           $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
 
 
-          $files = glob('/var/www/html/photos/'.$name.'/*.jpg');
+          $files = glob('/var/www/art-komnata.ru/photos/'.$name.'/*.jpg');
           $gallery = [];
           foreach ($files as $file) {
             $gallery[] = [ 'photo' => $name.'/'.basename($file), 'thumb' => $name.'/thumbs/'.basename($file), 'name' => $title ];

@@ -5,7 +5,7 @@
       <paths name="188.120.239.179">
         <serverdata>
           <mappings>
-            <mapping deploy="/html" local="$PROJECT_DIR$/dist" web="/" />
+            <mapping deploy="/art-komnata.ru" local="$PROJECT_DIR$/dist" web="/" />
           </mappings>
         </serverdata>
       </paths>

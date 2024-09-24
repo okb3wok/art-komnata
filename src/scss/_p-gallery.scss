@@ -97,6 +97,10 @@
 
 
 
+
+
+
+
     &>a .gallery__item-img>img {
       transition: transform .4s ease-in-out;
     }
@@ -110,7 +114,13 @@
     }
 
 
-    .gallery__item-img:after {
+    &>a .gallery__item-caption > svg{
+      margin: 0 auto;
+    }
+
+
+
+    .gallery__item-img:after , .gallery__item-img-simple:after {
     position: absolute;
     display: block;
     content: "";
@@ -120,6 +130,14 @@
     left: 0;
     background: unset;
     transition: all .4s ease-in-out;
+    }
+
+
+
+
+    &>a:hover .gallery__item-img-simple:after {
+      background: rgba(0, 0, 0, 0.5);
+      transition: all .4s ease-in-out;
     }
 
     &>a:hover .gallery__item-img:after {
