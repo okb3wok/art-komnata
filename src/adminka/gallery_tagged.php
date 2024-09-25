@@ -8,80 +8,52 @@
 
               <?php
 
-              if(isset($_GET['gallery']) && isset($_GET['update'])){
-//                $jsonData = file_get_contents('../model-gallery-tagged.json');
-//                $dataArray = json_decode($jsonData, true);
-//                $dataArray[$_GET['gallery']]['title'] = trim($_POST['title']);
-//                $dataArray[$_GET['gallery']]['desc'] = trim($_POST['desc']);
-//                $dataArray[$_GET['gallery']]['thumb'] = trim($_POST['thumb']);
-//                $jsonData = json_encode($dataArray, JSON_UNESCAPED_UNICODE);
-//                file_put_contents('../model-gallery-tagged.json', $jsonData);
-                echo '<p style="color:green">Галерея обновлена</p>';
-
-                print_r($_POST);
-
-              }
-
-              $jsonData = file_get_contents('../model-gallery-tagged.json');
-              $dataArray = json_decode($jsonData, true);
 
               if(isset($_GET['gallery'])){
-                $gallery = $dataArray[$_GET['gallery']];
+
                 echo '<a href="./?req=gallery_tagged">Назад</a>  
-                <h1>' . $_GET['gallery'] . '</h1>
+                <h1 id="gallery_name">' . $_GET['gallery'] . '</h1>
                 
                 <p>Заполните название галереи и описание</p>
-                <form action="./?req=gallery_tagged&gallery=' . $_GET['gallery'] . '&update" 
-                method="POST" enctype="multipart/form-data">
+
                 
                 <div class="col-12 col-lg-6">
                     <div class="form-group">
                         <label><strong>Название</strong>(Title)</label>
-                        <input class="form-control" type="text" name="title" value="' . $gallery['title'] . '">
+                        <input id="gallery_title" class="form-control" type="text" name="title" value="">
                     </div>
                 </div>    
                 <br>
                 <div class="col-12 col-lg-12">
                     <div class="form-group">
                         <label><strong>Описание</strong>(Description)</label>
-                        <input class="form-control" type="text" name="desc" value="' . $gallery['desc'] . '">
-                        
+                        <input id="gallery_desc" class="form-control" type="text" name="desc" value="">
                     </div>
                 </div>
                 <br>
-                <div class="col-6 col-lg-2">
+                <div class="col-6 col-lg-3">
                     <div class="form-group">
                         <label><strong>Титульное изображение</strong> - имя нужного файла (например 1.jpg)</label>
-                        <input class="form-control" type="text" name="thumb" value="' . $gallery['thumb'] . '">
+                        <input id="gallery_thumb" class="form-control" type="text" name="thumb" value="">
                     </div>
-                </div> 
+                </div>
                 <br>
                 <button class="btn btn-secondary" id="addTags">+ Добавить теги</button>
                 <br>
-                <div id="tagsForm" >
-                </div>
+                <div id="tagsForm" ></div>
 
                 <br>
-                <input type="submit" class="btn btn-primary" value="Обновить">
+                <input type="submit" class="btn btn-primary" value="Обновить" id="gallery_update">
                 
                 
                 <br><br>
-                <h4>Миниатюры галереи:</h4>';
+                <h4>Миниатюры галереи:</h4><div class="gallery__list"></div>';
 
-
-                $files = glob('../photos/'. $_GET['gallery'] .'/*.jpg');
-                $gallery = [];
-                echo '<div class="gallery__list">';
-                foreach ($files as $file) {
-                  echo '<div class="gallery__item">';
-                  echo '<div class="number">'.basename($file).'</div>';
-                  echo '<img src="../photos/'.$_GET['gallery'].'/thumbs/'.basename($file).'" >';
-                  echo '</div>';
-                }
-                echo '</div>
-                </form>';
 
               }else{
+
+                $jsonData = file_get_contents('../model-gallery-tagged.json');
+                $dataArray = json_decode($jsonData, true);
 
                 foreach ($dataArray as $key => $value) {
                   if($value['desc']==''){

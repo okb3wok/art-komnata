@@ -24,21 +24,19 @@ const header = {
 
       el.addEventListener('click', (event) => {
 
-
-
-        if(event.target.hash && event.target.baseURI === event.target.origin+"/"){
+        if(event.target.hash && window.location.pathname === "/"){
           event.preventDefault();
           let link = document.querySelector(event.target.hash);
-          if(link){
+            if(link){
+            window.scrollTo({ top: link.offsetTop-59, behavior: 'smooth' });
+          }
+        }
+
+        if (event.target.closest('.header-nav')) {
             if(mobileWrap.classList.contains('open')){
               this.menuToggle.classList.toggle('open');
               mobileWrap.classList.toggle('open');
             }
-            //window.location = event.target.origin;
-
-            window.scrollTo({ top: link.offsetTop-59, behavior: 'smooth' });
-          }
-
         }
 
 

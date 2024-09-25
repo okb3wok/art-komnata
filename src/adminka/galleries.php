@@ -8,7 +8,7 @@
 
                 <p>Считаны все галереи расположенные в папке photos:</p>
                 <?php
-                $dirs = glob('/var/www/html/photos/*', GLOB_ONLYDIR);
+                $dirs = glob('/var/www/art-komnata.ru/photos/*', GLOB_ONLYDIR);
                 foreach ($dirs as $dir) {
                     if(basename($dir) != 'thumbs'){
                         echo '<strong>'.basename($dir) . "</strong><br>";
@@ -19,6 +19,23 @@
                             }
                         }
                     }
+                }
+
+
+                function scan_directory_for_jpg($dir) {
+                  $files = array();
+
+                  if (is_dir($dir)) {
+                    if ($dh = opendir($dir)) {
+                      while (($file = readdir($dh)) !== false) {
+                        if (is_file($dir . '/' . $file) && preg_match("/\.jpg$/i", $file)) {
+                          $files[] = basename($file);
+                        }
+                      }
+                      closedir($dh);
+                    }
+                  }
+                  return $files;
                 }
 
                 ?>

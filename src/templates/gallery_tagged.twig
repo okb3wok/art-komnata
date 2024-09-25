@@ -7,7 +7,7 @@
         <ul class="gallery__tags">
             <li><a href="#all">Все</a></li>
             {% for item in tags%}
-                <li><a href="#{{ item.eng }}">{{ item.ru }}</a></li>
+                <li><a href="#{{ item.slug }}">{{ item.name }}</a></li>
             {% endfor %}
         </ul>
 
