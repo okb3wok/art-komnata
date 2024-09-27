@@ -15,7 +15,14 @@ class Controller{
 
     public function index()
     {
-        $this->render('art.twig', ['pageTitle' => 'АртКомната']);
+      $settingsData = file_get_contents('./main-settings.json');
+      $settingsArray = json_decode($settingsData, true);
+
+      $pageDescription = $settingsArray['desc'];
+      $pageTitle = $settingsArray['title'];
+
+      $this->render('art.twig', ['pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
+
     }
 
     public function gallery_simple($name)
@@ -28,7 +35,11 @@ class Controller{
         if($dataArray[$name]){
           $title = $dataArray[$name]['title'];
           $pageDescription = $dataArray[$name]['desc'];
-          $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
+
+          $settingsData = file_get_contents('./main-settings.json');
+          $settingsArray = json_decode($settingsData, true);
+
+          $pageTitle = $dataArray[$name]['title'] . ' - ' . $settingsArray['sitename'];
 
 
           $files = glob('/var/www/art-komnata.ru/photos/'.$name.'/*.jpg');
@@ -56,7 +67,11 @@ class Controller{
       if($dataArray[$name]){
         $title = $dataArray[$name]['title'];
         $pageDescription = $dataArray[$name]['desc'];
-        $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
+
+        $settingsData = file_get_contents('./main-settings.json');
+        $settingsArray = json_decode($settingsData, true);
+
+        $pageTitle = $dataArray[$name]['title'] . ' - ' . $settingsArray['sitename'];
 
         $tags=$dataArray[$name]['tags'];
 
@@ -85,7 +100,12 @@ class Controller{
 
       $title = $dataArray[$name]['title'];
       $pageDescription = $dataArray[$name]['desc'];
-      $pageTitle = $dataArray[$name]['title'] . ' - АртКомната';
+
+      $settingsData = file_get_contents('./main-settings.json');
+      $settingsArray = json_decode($settingsData, true);
+
+      $pageTitle = $dataArray[$name]['title'] . ' - ' . $settingsArray['sitename'];
+
       $content = $dataArray[$name]['content'];
       $this->render('gallery_nested.twig', ['content'=>$content, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
 
@@ -95,7 +115,11 @@ class Controller{
     {
       $title = 'Страница не найдена';
       $pageDescription = 'Страница не найдена';
-      $pageTitle = 'Страница не найдена - АртКомната';
+
+      $settingsData = file_get_contents('./main-settings.json');
+      $settingsArray = json_decode($settingsData, true);
+      $pageTitle = 'Страница не найдена - ' . $settingsArray['sitename'];
+
       header("HTTP/1.0 404 Not Found");
       $this->render('404.twig', ['content'=>$url, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
     }

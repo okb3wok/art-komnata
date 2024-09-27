@@ -12,16 +12,9 @@ $url = preg_replace("/\/$/", "", $url);
 
 include 'controller.php';
 
+$jsonData = file_get_contents('./galleries_structure.json');
+$galleriesStructure = json_decode($jsonData, true);
 
-$routes = [
-//    'o-nas',
-    'gallery',
-    'public-spaces-gallery',
-    'cornices-and-moldings',
-    'interior-paints-and-decorative-plasters',
-    'wallpapers',
-    'frescoes'
-];
 
 $controller = new Controller();
 
@@ -32,13 +25,13 @@ if($url=="") {  // in case Home Page
 
     preg_match("/^([a-z0-9-_]*)\/?([a-z0-9-_]*)$/i", $url, $matches);
 
-    if(in_array($matches[1], $routes)){
+    if(array_key_exists($matches[1], $galleriesStructure)){
 
-        if($matches[1] == "wallpapers" || $matches[1] == "frescoes"  ){
+        if($galleriesStructure[$matches[1]]['type'] == "simple" ){
             $controller->gallery_simple($matches[0]);
-        }elseif ($matches[1] == "cornices-and-moldings" || $matches[1] == "interior-paints-and-decorative-plasters"){
+        }elseif ($galleriesStructure[$matches[1]]['type'] == "tagged"){
             $controller->gallery_tagged($matches[1]);
-        }elseif ($matches[1] == "gallery" || $matches[1] == "public-spaces-gallery"){
+        }elseif ($galleriesStructure[$matches[1]]['type'] == "nested"){
             if($matches[2]){
               $controller->gallery_simple($matches[0]);
             }else{
