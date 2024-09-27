@@ -38,6 +38,6 @@ Builds the app for production to the `dist` folder. The build is minified js and
 │ ├── templates          - Twig templates
 │ └── js                 - JavaScript files
 ├── webpack.config.js    - Webpack configuration
-└── package.json         - info
+└── package.json         - dependencies
 ```
 
