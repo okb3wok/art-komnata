@@ -24,7 +24,9 @@
 
                       $content = [];
                       foreach ($dataArray_simple as $key_simple => $value_simple) {
-                          if(preg_match('/'.$value.'\/(.*)/', $key_simple)){
+
+
+                          if(preg_match('/^'.$value.'\/(.*)$/', $key_simple)){
                             $content[$key_simple]= [
                               'title' => $value_simple['title'],
                               'thumb' => $value_simple['thumb']];
@@ -40,7 +42,6 @@
                     file_put_contents('../model-gallery-nested.json', $jsonData);
 
                     echo '<p style="color:green">Галереи обновлены</p>';
-
                 }
 
                 $file = '../model-gallery-nested.json';

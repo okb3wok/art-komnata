@@ -1,0 +1,6 @@
+User-agent: *
+Host: https://art-komnata.ru
+Disallow: /adminka/
+Allow: /
+Sitemap: https://art-komnata.ru/sitemap.xml
+

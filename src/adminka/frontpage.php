@@ -55,6 +55,10 @@
                     <input type="submit" class="btn btn-primary" value="Обновить">
                 </form>
 
+                <br><br><strong>Вид сайта в поисковике яндекс:</strong><br>
+                <p>
+                    <img src="../static/snippet.png" alt="Вид сайта в выдаче поисковиков" style="max-width:100%">
+                </p>
             </div>
         </div>
     </div>
