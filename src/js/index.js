@@ -17,7 +17,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
   swiper.init();
   tags.init();
 
+  function* generateSequence() {
+    yield 1;
+    yield 2;
+    return 3;
+  }
 
+  function* generateSequence() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+
+  let sequence = [...generateSequence()];
+
+
+  console.log(sequence);
 
 
 });

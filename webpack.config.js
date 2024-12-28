@@ -9,7 +9,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 let stylesHandler = 'style-loader';
 
-if (environment!='development') {
+if (environment != 'development') {
   console.log('[PRODUCTION]');
   stylesHandler = MiniCssExtractPlugin.loader;
 }
@@ -24,7 +24,6 @@ const config = {
       // The environment supports arrow functions ('() => { ... }').
       arrowFunction: true
     }
-
   },
   devServer: {
     static: './src',

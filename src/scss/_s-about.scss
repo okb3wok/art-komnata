@@ -23,6 +23,36 @@
   }
 
 
+  &__gramoty{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+
+  &__gramoty-item{
+    flex: 0 1 30%;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #cccccc;
+    line-height: 1.2;
+
+    @include devices(mobile){
+      flex: 0 1 48%;
+    }
+
+  }
+  &__gramoty-item>img{
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  &__gramoty-item:hover{
+    color: #ffffff;
+  }
 
   &__content{
     display: flex;
@@ -63,6 +93,7 @@
       @include devices(mobile){
         text-align: center;
       }
+
     }
   }
 
