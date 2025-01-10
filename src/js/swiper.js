@@ -10,10 +10,12 @@ const swiper = {
 
   selector: '#swiper',
   swiper: null,
+  swiperContainer: null,
 
   init (){
     if (!document.querySelector(this.selector)) return;
 
+    this.swiperContainer = document.getElementById('swiper-container');
 
     this.swiper = new Swiper(this.selector, {
       lazy: true,
@@ -43,11 +45,9 @@ const swiper = {
       let links = document.querySelectorAll('a');
       let images = [];
 
-      document.getElementById('swiper-container').addEventListener('touchmove',(event)=>{
+      this.swiperContainer.addEventListener('touchmove',(event)=>{
         event.preventDefault() // For prevent scroll by swipe body/page
       })
-
-
 
       links.forEach( (el)=>{
 
@@ -61,7 +61,7 @@ const swiper = {
             event.preventDefault();
             document.body.style.position = 'sticky';
             document.body.style.top = window.scrollY;
-            document.getElementById('swiper-container').classList.replace('hidden', 'show');
+            this.swiperContainer.classList.replace('hidden', 'show');
 
             let imgIndex = images.findIndex((el)=>{ return el === event.target.parentElement.href})
             this.swiper.slideTo(imgIndex, 0, false)
@@ -80,27 +80,23 @@ const swiper = {
         }
       })
 
-
-
     }else {
       return;
     }
 
     const swiperClose = document.getElementById('swiper-close');
-    const swiperContainer = document.getElementById('swiper-container');
 
     swiperClose.addEventListener('click', ()=>{
-      swiperContainer.classList.replace('show', 'hidden');
+      this.swiperContainer.classList.replace('show', 'hidden');
       document.body.style.position = '';
       document.body.style.top = '';
 
     })
 
-
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
-        if(swiperContainer.classList.contains('show')){
-          swiperContainer.classList.replace('show', 'hidden');
+        if(this.swiperContainer.classList.contains('show')){
+          this.swiperContainer.classList.replace('show', 'hidden');
           document.body.style.position = '';
           document.body.style.top = '';
         }
@@ -108,6 +104,11 @@ const swiper = {
     })
 
   },
+
+  show(){
+    this.swiperContainer.classList.remove('hidden');
+    this.swiperContainer.classList.add('show');
+  }
 
 }
 

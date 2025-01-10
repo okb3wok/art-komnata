@@ -5,6 +5,7 @@ import promo  from "./promo.js";
 import swiper from "./swiper.js";
 import tags from "./tags.js";
 import metrika from "./metrika.js";
+import visual from "./visual";
 
 document.addEventListener('DOMContentLoaded', ()=>{
 
@@ -16,23 +17,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   promo.init();
   swiper.init();
   tags.init();
-
-  function* generateSequence() {
-    yield 1;
-    yield 2;
-    return 3;
-  }
-
-  function* generateSequence() {
-    yield 1;
-    yield 2;
-    yield 3;
-  }
-
-  let sequence = [...generateSequence()];
-
-
-  console.log(sequence);
-
+  visual.init();
 
 });

@@ -20,7 +20,9 @@ $controller = new Controller();
 
 
 if($url=="") {  // in case Home Page
-    $controller->index();
+  $controller->index();
+}elseif($url=="visual"){
+  $controller->visual();
 }else{ // Other pages
 
     preg_match("/^([a-z0-9-_]*)\/?([a-z0-9-_]*)$/i", $url, $matches);

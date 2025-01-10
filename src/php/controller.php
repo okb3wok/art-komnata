@@ -54,7 +54,7 @@ class Controller{
           $this->not_found($name);
         }
 
-}
+    }
 
 
     public function gallery_tagged($name){
@@ -124,6 +124,13 @@ class Controller{
       $this->render('404.twig', ['content'=>$url, 'title' => $title, 'pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
     }
 
+    public function visual(){
+      $settingsData = file_get_contents('./main-settings.json');
+      $settingsArray = json_decode($settingsData, true);
+      $pageTitle = 'Визитка - ' . $settingsArray['sitename'];
+      $pageDescription = 'Визитка. Слайдшоу. Презентация проектов.';
+      $this->render('visual.twig',['pageTitle' => $pageTitle, 'pageDescription' => $pageDescription]);
+    }
 
 
 }

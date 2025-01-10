@@ -1,0 +1,163 @@
+{% set site_url='/' %}
+<!DOCTYPE html>
+<html lang="ru-RU">
+{% include "./head.twig" %}
+<body class="body" >
+{% include "./site/preloader.twig" %}
+{#{% include "./site/header.twig" %}#}
+<div class="content" >
+  <main class="main">
+    <div id="visual">
+      <div class="swiper-container hidden" id="visualSwiper-container" >
+        <div class="swiper" id="visualSwiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="visual_slide">
+                <div class="visual_slide__title">О нас</div>
+                <div class="visual_slide__wrapper">
+                  <div class="visual_slide__content">
+                    АRTкомната - творческий проект дизайнера Ирины Жуковой. Создан более 15 лет назад, чтобы объединить команду профессионалов, воплощающую креативные идеи в жизнь. Мы предлагаем широкий спектр услуг в области дизайна интерьеров. От зарождения идеи до ее реализации. Считаем, что каждый создаваемый интерьер должен подходить внутреннему миру заказчика, его привычному образу жизни.
+                    <br><br><img src="../static/logo.png" alt="" style="margin: 0 auto; display: block; width:70px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="visual_slide">
+                <div class="visual_slide__title">Предлагаем</div>
+                <div class="visual_slide__wrapper">
+                  <div class="visual_slide__content">
+                    <h2>Технологический проект</h2>
+                      <span>от 2 700 руб/кв.м</span>
+                    <p  class="visual_slide__content-project">
+                      Замер объекта
+                      Составление технического задания
+                      Планировочное решение (до 5 вариантов)
+                      Технические чертежи, концептуальные коллажи (2 круга правок)
+                      Визуализация 3D
+                      Рекомендации по подбору материалов и мебели (с ссылками и контактами проверенных поставщиков и производителей)
+                    </p>
+
+                    <h2>Дизайн интерьер жилого помещения полный под ключ</h2>
+                    <span>от 3 500 руб/кв.м</span>
+                    <p  class="visual_slide__content-project">
+                      Замер объекта
+                      Составление технического задания
+                      Планировочное решение (до 5 вариантов)
+                      Технические чертежи
+                      Визуализация 3D каждого помещения (2 круга правок)
+                      Рекомендации по подбору материалов и мебели (с ссылками и контактами проверенных поставщиков и производителей)
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="visual_slide">
+                <div class="visual_slide__title">Проекты</div>
+                <div class="visual_slide__wrapper">
+                  <div class="visual_slide__content">
+                    <div class="gallery__list">
+                      <div class="gallery__item">
+                          <div class="gallery__item-img">
+                            <img loading="lazy" src="../static/vizitka/vizitka_01.jpg" alt="">
+                          </div>
+                      </div>
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_02.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_03.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_04.jpg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="visual_slide">
+                <div class="visual_slide__title">Проекты</div>
+                <div class="visual_slide__wrapper">
+                  <div class="visual_slide__content">
+                    <div class="gallery__list">
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_05.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_06.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_07.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_08.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="gallery__item">
+                        <div class="gallery__item-img">
+                          <img loading="lazy" src="../static/vizitka/vizitka_09.jpg" alt="">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="visual_slide">
+                <div class="visual_slide__title">Контакты</div>
+                <div class="visual_slide__wrapper">
+                  <div class="visual_slide__content">
+                    <h2>Студия ARTкомната</h2>
+                      <p>Адрес: г.&nbsp;Курск, ул.&nbsp;Димитрова,&nbsp;д.&nbsp;66</p>
+                      <p>Телефон: +7 (962) 379 7770</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+          <div class="swiper-pagination"></div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+</div><!--/content-->
+
+{% include "./site/swiper.twig" %}
+{#  {% include "./site/modal.twig" %}#}
+<script defer src="{{ site_url }}art.js"></script></body>
+
+</body>
+</html>
