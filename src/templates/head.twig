@@ -2,7 +2,7 @@
     <meta charset="utf-8" />
     <title>{% if pageTitle %}{{ pageTitle }}{% else %}Title{% endif %}</title>
     <meta name="description" content="{% if pageDescription %}{{ pageDescription }}{% else %}{% endif %}" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.96, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#000000">
     <link href="{{ site_url }}art.css" rel="stylesheet">
@@ -15,4 +15,9 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://art-komnata.ru/" />
     <meta name="yandex-verification" content="1d488cf042340468" />
+    <script>
+        if (navigator.userAgent.indexOf("Firefox") > -1) {
+            document.getElementsByName('viewport')[0].content="width=device-width, initial-scale=0.85, viewport-fit=cover";
+        }
+    </script>
 </head>

@@ -26,6 +26,7 @@ const visual = {
 
     this.visualSwiper = new Swiper('#visualSwiper', {
       lazy: true,
+      direction: "vertical",
       lazyPreloadPrevNext: 2,
       centeredSlides: true,
       mousewheel: true,
@@ -44,7 +45,7 @@ const visual = {
       //   prevEl: ".swiper-button-prev",
       // },
       autoplay: {
-        delay: 2500,
+        delay: 3500,
         disableOnInteraction: false,
       },
       loop: true,
@@ -53,6 +54,25 @@ const visual = {
 
 
     this.showVisualSwiper();
+
+    // Реализация кнопки паузы/старта
+    const autoplayToggleButton = document.getElementById('autoplay-toggle');
+
+    autoplayToggleButton.getElementsByTagName('svg')[1].style.display = 'none';
+// Обработчик событий для кнопки
+    autoplayToggleButton.addEventListener('click', () => {
+      if (this.visualSwiper.autoplay.running) {
+        this.visualSwiper.autoplay.stop();
+        autoplayToggleButton.getElementsByTagName('svg')[0].style.display = 'none';
+        autoplayToggleButton.getElementsByTagName('svg')[1].style.display = 'inline';
+
+      } else {
+        this.visualSwiper.autoplay.start();
+
+        autoplayToggleButton.getElementsByTagName('svg')[1].style.display = 'none';
+        autoplayToggleButton.getElementsByTagName('svg')[0].style.display = 'inline';
+      }
+    });
 
   },
 

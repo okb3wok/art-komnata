@@ -1,6 +1,7 @@
 .visual_slide{
   padding: 20rem;
   height: 100%;
+
   &__title{
     color: #fff;
     text-transform: uppercase;
@@ -14,6 +15,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+
   }
 
   &__content{
@@ -21,9 +23,14 @@
     font-size: 20px;
     color: #fff;
 
-    max-width: 640px;
+    padding: 0 20%;
+
+    @include devices(tablet){
+      padding: 0 10%;
+    }
     @include devices(mobile){
       font-size: 18px;
+      padding: 0;
     }
 
     & h2 {
@@ -36,10 +43,42 @@
 
   }
 
-  &__content-project{
+  &__content-photo{
+    font-size: 12px;
+    margin: 0 auto;
+    line-height: 1.2;
+
+  }
+  &__content-photo img{
+    width: 160px;
+    display: block;
+    margin: 0 auto 6px;
+  }
+  &__content-about{
     @include devices(mobile){
-      line-height: 1.1;
+      line-height: 1.2;
       font-size: 16px;
     }
   }
+
+  &__content-project{
+    @include devices(mobile){
+      line-height: 1.2;
+      font-size: 16px;
+    }
+  }
+}
+
+.pause{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  color: #007aff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 6;
+}
+
+#visualSwiper-container{
+  background: linear-gradient(135deg, #2c2c32 0%, #556670 100%);
 }

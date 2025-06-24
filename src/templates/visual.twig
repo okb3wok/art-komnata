@@ -17,9 +17,20 @@
                 <div class="visual_slide__title">О нас</div>
                 <div class="visual_slide__wrapper">
                   <div class="visual_slide__content">
-                    АRTкомната - творческий проект дизайнера Ирины Жуковой. Создан более 15 лет назад, чтобы объединить команду профессионалов, воплощающую креативные идеи в жизнь. Мы предлагаем широкий спектр услуг в области дизайна интерьеров. От зарождения идеи до ее реализации. Считаем, что каждый создаваемый интерьер должен подходить внутреннему миру заказчика, его привычному образу жизни.
-                    <br><br><img src="../static/logo.png" alt="" style="margin: 0 auto; display: block; width:70px;">
-                  </div>
+                    <p  class="visual_slide__content-about">
+                    АRTкомната - творческий проект дизайнера Ирины Жуковой. Создан более 15 лет назад, чтобы объединить
+                    команду профессионалов, воплощающую креативные идеи в жизнь. Мы предлагаем широкий спектр услуг в
+                    области дизайна интерьеров. От зарождения идеи до ее реализации. Считаем, что каждый создаваемый
+                      интерьер должен подходить внутреннему миру заказчика, его привычному образу жизни.</p>
+
+                    <div class="visual_slide__content-photo"><img src="../static/irina.jpg"
+                         title="Ирина Жукова, дизайнер. Основатель АRTКомната, член Союза дизайнеров России"
+                                                                  alt="Ирина Жукова">
+                      <strong>Ирина Жукова</strong><br>
+                      <span>Арт-директор, руководитель и основатель АRTкомната, член Союза дизайнеров России</span>
+                    </div>
+
+                 </div>
                 </div>
               </div>
             </div>
@@ -30,7 +41,7 @@
                 <div class="visual_slide__wrapper">
                   <div class="visual_slide__content">
                     <h2>Технологический проект</h2>
-                      <span>от 2 700 руб/кв.м</span>
+                      <span>от 3000&nbsp;₽/кв.м.</span>
                     <p  class="visual_slide__content-project">
                       Замер объекта
                       Составление технического задания
@@ -57,14 +68,32 @@
 
             <div class="swiper-slide">
               <div class="visual_slide">
+                <div class="visual_slide__title">Проектирование</div>
+                <div class="visual_slide__wrapper">
+                  <div class="visual_slide__content">
+                    <video src="../static/vizitka/project.mp4" loop=""
+                           preload="metadata"
+                           muted=""
+                           playsinline=""
+                           controls=""
+                           autoplay="autoplay" style="width: 100%"></video>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="visual_slide">
                 <div class="visual_slide__title">Проекты</div>
                 <div class="visual_slide__wrapper">
                   <div class="visual_slide__content">
                     <div class="gallery__list">
                       <div class="gallery__item">
+                        <a href="/gallery/2-to-mini-3/">
                           <div class="gallery__item-img">
                             <img loading="lazy" src="../static/vizitka/vizitka_01.jpg" alt="">
                           </div>
+                        </a>
                       </div>
                       <div class="gallery__item">
                         <div class="gallery__item-img">
@@ -114,11 +143,11 @@
                           <img loading="lazy" src="../static/vizitka/vizitka_08.jpg" alt="">
                         </div>
                       </div>
-                      <div class="gallery__item">
-                        <div class="gallery__item-img">
-                          <img loading="lazy" src="../static/vizitka/vizitka_09.jpg" alt="">
-                        </div>
-                      </div>
+{#                      <div class="gallery__item">#}
+{#                        <div class="gallery__item-img">#}
+{#                          <img loading="lazy" src="../static/vizitka/vizitka_09.jpg" alt="">#}
+{#                        </div>#}
+{#                      </div>#}
 
                     </div>
                   </div>
@@ -134,7 +163,13 @@
                     <h2>Студия ARTкомната</h2>
                       <p>Адрес: г.&nbsp;Курск, ул.&nbsp;Димитрова,&nbsp;д.&nbsp;66</p>
                       <p>Телефон: +7 (962) 379 7770</p>
-                    </div>
+                    <p>Сайт: <a href="https://art-komnata.ru/" style="color: white;">https://art-komnata.ru</a></p>
+                    <br><br><a href="https://art-komnata.ru/" style="color: white;">
+                      <img src="../static/logo.png" alt="" style="margin: 0 auto; display: block;
+                      width:70px; filter: invert(100%);">
+                    </a>
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,6 +177,14 @@
 
 
           </div>
+          <button id="autoplay-toggle" class="pause"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M8 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H8Zm7 0a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1Z" clip-rule="evenodd"/>
+            </svg>
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z" clip-rule="evenodd"/>
+            </svg>
+
+          </button>
           <div class="swiper-pagination"></div>
 
 
