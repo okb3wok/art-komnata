@@ -61,9 +61,7 @@
                   }else{
                     echo '<a href="./?req=gallery_tagged&gallery=' . $key . '">' . $key . '</a><br>';
                   }
-
                 }
-
               }
               ?>
             </div>

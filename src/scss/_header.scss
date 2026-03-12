@@ -2,7 +2,7 @@
 
   flex: 0 1 auto;
   width:100%;
-  background: #222222;
+  background: #45494e;
   backdrop-filter: blur(3px);
   color: #ffffff;
   text-transform: uppercase;
@@ -11,10 +11,6 @@
   z-index: 2;
 
 
-
-  @include devices(mobile){
-    background: #222222;
-  }
 
   & .wrapper{
     display: flex;
@@ -82,7 +78,7 @@
       position: absolute;
       top: 60px;
       flex-wrap: wrap;
-      background: #222222;
+      background: #45494e;
       opacity: 1;
       transition: opacity .15s ease-in-out;
       padding: 0 0 30rem 0;

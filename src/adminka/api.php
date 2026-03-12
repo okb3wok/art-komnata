@@ -14,17 +14,60 @@ if($postData){
       case 'fetchTaggedGallery':
 
         $gallery_name = $postArray["data"]["gallery"];
+        $photos_dir = "/var/www/art-komnata.ru/photos/" . $gallery_name;
 
         $jsonData = file_get_contents('../model-gallery-tagged.json');
         $dataArray = json_decode($jsonData, true);
 
+        if (!isset($dataArray[$gallery_name])) {
+          echo '{"result":0, "error":1, "status":"Запрашиваемой галереи не найдено."}';
+          break;
+        }
+
         $gallery = $dataArray[$gallery_name];
 
-        if($gallery ){
-          echo '{"result":1, "error":0, "status":"OK", "gallery":' . json_encode($gallery, JSON_UNESCAPED_UNICODE) . '}';
-        }else{
-          echo '{"result":0, "error":1, "status":"Запрашиваемой галереи не найдено."}';
+        if (!isset($gallery["content"])) {
+          $gallery["content"] = [];
         }
+
+        // список изображений из JSON
+        $jsonImages = [];
+        foreach ($gallery["content"] as $item) {
+          $jsonImages[] = $item["img"];
+        }
+
+        // сканируем папку
+        if (is_dir($photos_dir)) {
+
+          $files = scandir($photos_dir);
+
+          foreach ($files as $file) {
+
+            if ($file == '.' || $file == '..') {
+              continue;
+            }
+
+            // проверяем расширение
+            if (!preg_match('/\.(jpg|jpeg|png|webp|gif)$/i', $file)) {
+              continue;
+            }
+
+            // если нет в JSON — добавляем
+            if (!in_array($file, $jsonImages)) {
+              $gallery["content"][] = [
+                "img" => $file,
+                "tag" => 0
+              ];
+            }
+          }
+        }
+
+        echo json_encode([
+          "result" => 1,
+          "error" => 0,
+          "status" => "OK",
+          "gallery" => $gallery
+        ], JSON_UNESCAPED_UNICODE);
 
         break;
 

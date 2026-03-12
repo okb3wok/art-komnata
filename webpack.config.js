@@ -34,7 +34,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/templates/visual.twig',
+      template: './src/templates/art.twig',
       filename: 'index.html',
       inject: false, // inject: 'body',
     }),

@@ -90,18 +90,15 @@ const swiper = {
       this.swiperContainer.classList.replace('show', 'hidden');
       document.body.style.position = '';
       document.body.style.top = '';
-
     })
 
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        if(this.swiperContainer.classList.contains('show')){
-          this.swiperContainer.classList.replace('show', 'hidden');
-          document.body.style.position = '';
-          document.body.style.top = '';
-        }
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && this.swiperContainer.classList.contains('show')) {
+        this.swiperContainer.classList.replace('show', 'hidden');
+        document.body.style.position = '';
+        document.body.style.top = '';
       }
-    })
+    });
 
   },
 

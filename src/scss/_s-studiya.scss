@@ -48,15 +48,24 @@
     flex-wrap: wrap;
     margin-top: 48rem;
     justify-content: space-between;
+    gap: 14px;
   }
 
 
   &__item{
-    flex:0 1 24%;
+    display: flex;
+    flex:0 1 20%;
     font-size: 18px;
     color: #666;
     margin-bottom: 20rem;
     font-family: system-ui, 'Open Sans', sans-serif;
+
+    &.empty{
+      flex-direction: column;
+      justify-content: space-between;
+      gap:10px;
+    }
+
     @include devices(tablet){
       flex: 0 1 48%;
     }
@@ -76,6 +85,7 @@
       justify-content: space-between;
       flex-direction: column;
       align-items: center;
+      box-shadow: 0px 0px 1px #8f8f8f;
       //height: 100%;
       &>svg{
         margin: 0 auto;
