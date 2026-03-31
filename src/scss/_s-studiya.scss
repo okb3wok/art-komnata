@@ -54,11 +54,12 @@
 
   &__item{
     display: flex;
-    flex:0 1 20%;
+    flex:0 1 18%;
     font-size: 18px;
     color: #666;
     margin-bottom: 20rem;
     font-family: system-ui, 'Open Sans', sans-serif;
+
 
     &.empty{
       flex-direction: column;
@@ -78,7 +79,7 @@
       text-decoration: none;
       text-align: center;
 
-      padding: var(--page-padding);
+      padding: 20rem;
 
       color: #666;
       display: flex;
@@ -113,8 +114,20 @@
     margin: 16px 0 15px;
   }
 
+  &__item-subtitle{
+    min-height: 72px;
+    line-height: 1.35;
+    @include devices(tablet){
+      min-height: unset;
+    }
+  }
+
   &__item-desc{
     margin: 0 0 20px;
+    min-height: 32px;
+    @include devices(tablet){
+      min-height: unset;
+    }
   }
 
   &__item-img{
